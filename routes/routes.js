@@ -1,14 +1,17 @@
-import express from "express";
-import IndexController from "../controller/indexController.js";
-import UserController from "../controller/userController.js";
-import RolesController from "../controller/rolesContoller.js";
-import JsonWebTokenManagement from "../middleware/JsonWebTokenManagement.js";
+const express = require ("express");
+const IndexController = require ("../controller/indexController.js");
+const UserController = require ("../controller/userController.js");
+const RolesController = require ("../controller/rolesContoller.js");
+const JsonWebTokenManagement = require ("../middleware/JsonWebTokenManagement.js");
+
+
 
 var router = express.Router();
 var indexControler = new IndexController();
 var userController = new UserController();
 var rolesController = new RolesController();
 var jsonwebtokenmanagement = new JsonWebTokenManagement();
+
 /* GET home page. */
 /**
  * Endpoints de los usuarios
@@ -41,4 +44,6 @@ router.delete("/roles/:id", rolesController.deleteRol);
 Implemente 
 */
 
-export default router;
+
+
+module.exports = router;
